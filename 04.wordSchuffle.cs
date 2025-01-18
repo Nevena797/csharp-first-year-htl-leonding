@@ -1,23 +1,21 @@
-﻿
-using System;
+﻿using System;
 
-Console.WriteLine("Word Shuffle");
-Console.WriteLine("============");
-Console.WriteLine();
+string firstWord;
+string secondWord;
+string thurdWord;
 
-Console.Write("Please enter 1st word:");
-string word1 = Console.ReadLine();
+Console.Write("Please enter a first word: ");
+firstWord = Console.ReadLine();
+Console.Write("Please enter a second word: ");
+secondWord = Console.ReadLine();
+Console.Write("Please enter a third word: ");
+thurdWord = Console.ReadLine();
 
-Console.Write("Please enter 2st word: ");
-string word2 = Console.ReadLine();
+Console.WriteLine(firstWord + ' ' + secondWord + ' ' + thurdWord);
+Console.WriteLine(firstWord + ' ' + thurdWord + ' ' + secondWord);
+Console.WriteLine(secondWord + ' ' + firstWord + ' ' + thurdWord);
+Console.WriteLine(secondWord + ' ' + thurdWord + ' ' + firstWord);
+Console.WriteLine(thurdWord + ' ' + firstWord + ' ' + secondWord);
+Console.WriteLine(thurdWord + ' ' + secondWord + ' ' + firstWord);
 
-Console.Write("Please enter 3st word: ");
-string word3 = Console.ReadLine();
-
-Console.WriteLine();
-Console.WriteLine($"{word1} {word2} {word3}");
-Console.WriteLine($"{word2} {word3} {word1}");
-Console.WriteLine($"{word3} {word1} {word2}");
-Console.WriteLine($"{word1} {word3} {word2}");
-Console.WriteLine($"{word2} {word1} {word3}");
-Console.WriteLine($"{word3} {word2} {word1}");
+Console.ReadLine();
