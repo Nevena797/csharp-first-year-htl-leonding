@@ -1,14 +1,4 @@
-﻿/*--------------------------------------------------------------
- *				HTBLA-Leonding / Class: <CLASSNAME>
- *--------------------------------------------------------------
- *              <NAME> 
- *--------------------------------------------------------------
- * Description:
- * ...
- *--------------------------------------------------------------
-*/
-
-using System;
+﻿using System;
 
 string input1;
 string input2;
@@ -27,16 +17,16 @@ Console.Write("Geschwindigkeit in km/h: ");
 input2 = Console.ReadLine();
 speed = double.Parse(input2);
 
-time = distance / speed;
-hour = (int)time;
-min = time - hour;
-min = min * 60;
-intmin = (int)min;
-sec = min - intmin;
-sec = sec * 60;
+time = distance / speed; //(double)time = 50.00 / 20.00 = 2.5
+hour = (int)time;       // hour = (int)2.5 = 2
+min = time - hour;     //(double) min = (2.5 - 2.0) = 0.5
+min = min * 60;       //(double)min = 0.5 * 60 = 30
+intmin = (int)min;   //intmin = (int) 30;
+sec = min - intmin; //sec = (30 - 30) = 0;
+sec = sec * 60;    // sec = 0 * 60;
 
 
-hour = hour + 10;
+hour = hour + 10; // 2 = 2 + 10; 
 
 
 Console.WriteLine($"Fuer die Strecke von {distance:f} km benoetigen Sie {time:f4} Stunden. Sie kommen um {hour:00}:{intmin:00}:{sec:00} an.");
@@ -44,48 +34,3 @@ Console.WriteLine($"Fuer die Strecke von {distance:f} km benoetigen Sie {time:f4
 
 Console.ReadLine();
 
-
-/*--------------------------------------------------------------
- *				HTBLA-Leonding / Class: xAHIF
- *--------------------------------------------------------------
- *                 / _)     (  _ / _-- _/_ _ 
- *                /(_) .   __)( /)/ ()(/(-/  
- *--------------------------------------------------------------
- * Description: Besuch der Tante.  
- *--------------------------------------------------------------
-*/
-
-using System;
-
-Console.WriteLine("Berechnung der Ankunftszeit bei der Tante");
-Console.WriteLine("=========================================");
-Console.WriteLine();
-
-/**
- * Eingabe
- **/
-Console.Write("Entfernung in km: ");
-string distanceInput = Console.ReadLine();
-double distance = Convert.ToDouble(distanceInput);
-Console.Write("Geschwindigkeit in km/h: ");
-string velocityInput = Console.ReadLine();
-double velocity = Convert.ToDouble(velocityInput);
-
-/**
- * Verarbeitung
- **/
-double time = distance / velocity;
-int fullHours = (int)time;
-double remainingMinutes = (time - fullHours) * 60;
-int fullMinutes = (int)(remainingMinutes);
-double remainingSeconds = (remainingMinutes - fullMinutes) * 60;
-// Damit die restlichen Sekunden richtig gerundet werden, muss
-// dann später der double-Wert inkl. Rest ausgegeben werden!
-// Bei den Sekunden muss also der Rest erhalten bleiben!
-fullHours += 10; // Abfahrt ist um 10:00
-
-/**
- * Ausgabe
- **/
-Console.WriteLine("Für die Strecke von {0:f} km benötigen Sie {1:f5} Stunden.", distance, time);
-Console.WriteLine("Sie kommen um {0}:{1:00}:{2:00} an.", fullHours, fullMinutes, remainingSeconds);
