@@ -1,48 +1,27 @@
-Console.Write("Please enter your age: ");
-int alter = int.Parse(Console.ReadLine());
+﻿using System;
 
-if (alter >= 18 && alter <= 20)
+Console.WriteLine("How old are you? ");
+string userInput = Console.ReadLine();
+int age = int.Parse(userInput);
+
+if (age > 18 && age < 21)
 {
-    Console.WriteLine("Hello, you're grown up!");
+    Console.WriteLine("You are grown up");
 }
-else if (alter < 18)
+else if (age <= 18)
 {
-    Console.WriteLine("Years must be 18!");
+    var diff = 18 - age;
+    Console.WriteLine("In approx. " + diff + " years you will be grown-up");
 }
-else if (alter >= 65 && alter <= 120)
+else if (age is (>= 65 and <= 120))  
 {
-    Console.WriteLine("Hello Senior!");
+    Console.WriteLine("Hallo Senior");
 }
-else if (alter > 120)
+else if (age > 120)
 {
-    Console.WriteLine("Zombie");
+    Console.WriteLine("Hallo Zombi");
 }
 else
 {
-    Console.WriteLine("Nice to see you");
-}
-
-
-Console.Write("Please enter your age again: ");
-alter = int.Parse(Console.ReadLine());
-
-if (alter == 25 || alter == 50 || alter == 75)
-{
-    Console.WriteLine("Happy milestone birthday!");
-}
-else if (alter < 15)
-{
-    Console.WriteLine("It will still take a long time until you turn 18!");
-}
-else if (alter >= 65 && alter <= 120)
-{
-    Console.WriteLine("Hello Senior!");
-}
-else if (alter > 120)
-{
-    Console.WriteLine("Zombie");
-}
-else
-{
-    Console.WriteLine("Nice to see you");
+    Console.WriteLine("Hallo");
 }
